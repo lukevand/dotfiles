@@ -5,9 +5,3 @@
 	email = lvanduuren@protonmail.com
 [credential]
 	helper = cache
-[filesystem "Debian|1.8.0_252|/dev/mapper/laptop--vg-home"]
-	timestampResolution = 1001 microseconds
-	minRacyThreshold = 6977 microseconds
-[filesystem "Debian|11.0.7|/dev/mapper/laptop--vg-home"]
-	timestampResolution = 14000 nanoseconds
-	minRacyThreshold = 7776 microseconds
