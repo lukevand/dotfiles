@@ -1,0 +1,162 @@
+#!/bin/bash
+# vim: filetype=sh
+
+# vf(){ fzf | xargs -r -I % "$EDITOR" %; }
+# sizes(){ apt-cache show "$@" | grep Size; }
+eixd(){ aptitude search \~d"$*"; }
+# vd() { find "$HOME" -type f -name '.*' | fzf | xargs -r "$EDITOR"; }
+# vv() { find . -type f | fzf | xargs -r "$EDITOR"; }
+# hist() { grep -i "$1" ~/.*history; }
+# fkill() { ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}' | xargs -r kill; }
+# algrep() { ag "$1" ~/.config; }
+# vh() { rg --hidden --files | fzf -1 | xargs -r "$EDITOR"; }
+# awkn() { awk '{ print $'$1'; }'; }
+# vm() { find ~/massey -type f | fzf --query="$1" -1 -0 | xargs -r "$EDITOR"; }
+# dm() { find ~/massey-doc -type f | fzf --query="$1" -1 -0 | xargs -r -I% xdg-open %; }
+# vmass() { find ~/massey -type f -name | fzf | xargs -r $EDITOR; }
+
+# vg() {
+# 	local file
+# 	local line
+
+# 	read -r file line <<<"$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1, $2}')"
+
+# 	[[ -n $file ]] && $EDITOR "$file" +"$line"
+# }
+
+alias ls='ls --color=auto --group-directories-first'
+alias grep='grep --color=auto'
+alias la='ls -l --almost-all --human-readable --group-directories-first'
+alias xcopy='xsel -i'
+alias xpaste='xsel -o'
+alias lb='lsblk'
+alias mv='mv -i'
+alias lr='less -R'
+alias r=ranger
+alias shc=shellcheck
+alias ipy=ipython
+alias xdt=xdotool
+alias dkpg=dpkg
+alias p=popd
+alias sess='less -S'
+alias showw='apt show'
+alias show='aptitude show'
+alias rdep='apt-cache rdepends --installed'
+alias ask='sudo aptitude install'
+# alias eix="aptitude search -F '%c %I %p %d'"
+alias eix="aptitude search"
+alias eixx='apt search'
+alias why='aptitude why'
+alias upd='sudo aptitude update && aptitude search "?upgradable"'
+alias upg='sudo aptitude safe-upgrade'
+alias purge='sudo aptitude purge'
+alias jestp='aptitude purge --simulate --assume-yes'
+alias jest='aptitude --simulate --assume-yes install'
+alias jestr='aptitude --with-recommends --simulate install'
+alias askr='sudo aptitude --with-recommends install'
+alias s=ls
+alias recent='ls -t | head'
+alias lt='ls -t'
+alias ltr='ls -tr'
+alias grep='grep --color=auto'
+alias anc='agc -n'
+alias gdb='gdb -quiet'
+alias diff='colordiff'
+alias xupm="xrdb -merge ~/.config/Xresources"
+alias xup="xrdb ~/.config/Xresources"
+alias py2=python2
+alias py3=python3
+alias k='cd ..'
+alias kk='cd ../..'
+alias kkk='cd ../../..'
+alias kkkk='cd ../../../..'
+alias ok='chmod 700'
+alias fa='fortune -a'
+alias dfcc='dfc -dT'
+alias al=alias
+alias ht=htop
+alias gu='guile --no-auto-compile'
+alias gl='guile --no-auto-compile --no-debug -l'
+# alias pass='PASSWORD_STORE_X_SELECTION=primary pass'
+alias dwmlogout='pkill xinit'
+alias ufw='sudo ufw'
+alias lbpart='lsblk -o NAME,UUID,PARTUUID,MOUNTPOINT'
+alias tree='tree -C'
+alias grubre='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias mysync='rsync -aAXh --info=progress2'
+alias mydelsync='rsync --delete --delete-excluded -aAXh --info=progress2'
+alias testsync='rsync --delete --delete-excluded -aAXh -nv --info=progress2'
+alias winsync='rsync --recursive --links --times --human-readable --info=progress2'
+alias fatmount='sudo mount -o nodev,noexec,nosuid,uid=1000'
+alias reboot='systemctl reboot'
+alias poweroff='systemctl poweroff'
+alias dunst_pause='killall -SIGUSR1 dunst'
+alias dunst_start='killall -SIGUSR2 dunst'
+alias edate=epochdate
+alias h='head -n1'
+alias toigay='toilet -f term --gay -w $COLUMNS'
+alias x='sxiv -a'
+alias o="source ~/bin/go_source"
+alias si='sxiv -i'
+alias hmake='ghc --make'
+alias metadel1='exiv2 -da'
+alias metadel2='exiftool -all= '
+alias dateu='date --utc'
+alias datu=dateu
+alias ag="ag --color-line-number '1;29' --color-match '1;31'"
+alias wcl='wc -l'
+alias shredu='shred --exact --zero --remove --verbose'
+alias m='mp'
+alias shch='shellcheck --shell=dash'
+alias hl='highlight --out-format=xterm256 --style=pablo'
+alias ccat=hl
+alias dus='du -shc'
+alias von='sudo vbetool dpms on'
+alias voff='sudo vbetool dpms off'
+# alias lp='lp_solve -S5'
+alias lns='ln --symbolic'
+# alias sc=systemctl
+alias scu='systemctl --user'
+alias suser='systemctl --user'
+alias daere='systemctl --user daemon-reload'
+alias sy=systemctl
+alias cronre='crontab ~/.crontab'
+alias psc='ps xawf -eo pid,user,cgroup,args'
+alias sless='less -FRSXMK'
+alias v=vim
+alias vim=nvim
+alias yt='youtube-dl --add-metadata -ic --write-thumbnail'
+alias soba='source ~/.bashrc'
+alias sozo="source ~/.zshrc"
+alias wifils='nmcli device wifi list'
+alias news='newsboat'
+alias mn='man'
+alias mpp='mpv --playlist=-'
+alias syu='systemctl --user'
+alias vr='vim -M'
+alias nr='vim -M'
+alias gcd='git clone --depth=1'
+alias new="aptitude search '?new' && sudo aptitude forget-new"
+alias afs='apt-file search'
+alias ff=firefox
+alias upgra="aptitude search '?upgradable'"
+alias l='less'
+alias ly='lynx'
+alias agh='ag --hidden'
+alias neofetch='neofetch --config none'
+alias les=less
+alias gs='git status -sb'
+alias gc='git commit -v'
+alias ga='git add'
+alias javaa='java -XX:+UseSerialGC -Xss64m -Dfile.encoding=UTF-8'
+alias mutt=neomutt
+alias tyt='tsp youtube-dl'
+# alias g+='g++ -ggdb -Wall -Wshadow -Wunused -Wextra -Wchkp -Wuseless-cast -Wpedantic -std=gnu++17'
+alias ncm=ncmpcpp
+alias n=nnn
+alias trre=transmission-remote
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias youtube-playlist="youtube-dl -o '/home/cos/videos/%(playlist)s/%(playlist_index)s-%(upload_date)s-%(title)s.%(ext)s'"
+alias tmuxt='tmux attach -t base || tmux new -s base'
+alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

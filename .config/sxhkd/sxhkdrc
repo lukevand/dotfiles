@@ -1,0 +1,96 @@
+# vim: set ft=conf
+alt + F12
+  /home/cos/bin/wifi_offon
+
+F2
+  dmenu_run
+
+shift + F2
+  /home/cos/bin/dmenu-websearch
+
+super + F2
+  /home/cos/bin/search-clipboard.sh
+
+super + Return
+  st -e tmux -2 new
+
+super + shift + Return
+  st
+
+mod3 + k
+  pkill -USR1 -x sxhkd
+
+XF86Audio{Raise,Lower}Volume
+  pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+KP_{Up,Down}
+  pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+KP_{Left,Right}
+  mpc -q {prev,next}
+
+KP_Begin
+  get-status song
+
+mod3 + {h,i}
+  mpc -q {prev,next}
+
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86MonBrightness{Down,Up}
+  brightnessctl -q set {5%-,5%+}
+
+Menu
+  mpc --quiet toggle
+
+# XF86AudioPlay
+#   mpc -q toggle
+
+XF86Audio{Prev,Next}
+  mpc -q {prev,next}
+
+super + F{6,8}
+  mp {p,n} 1 -q
+
+shift + XF86AudioNext
+  mp n 1 -q
+
+# mod3 + {comma,period}
+#   mp {p,n} 1 -q
+
+mod3 + q
+  slock
+
+mod3 + {m,b,v}
+  get-status {song,brightness,volume}
+
+shift + Print
+  screenshot select
+
+Print
+  screenshot
+
+super + F12
+  inspire-connect
+
+XF86AudioPlay
+  pausempv
+
+super + F7
+  insert-song.sh
+
+super + shift + F7
+  insert-album.sh
+
+super + KP_Begin
+  st -n float -e ncmpcpp
+
+super + KP_End
+  st -n float -e newsboat
+
+super + KP_Next
+    xset dpms force off
+
+super + shift + a
+  pavucontrol

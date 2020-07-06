@@ -1,0 +1,10 @@
+# vim: ft=conf
+# --external-downloader aria2c
+# --external-downloader-args "-x 4 -s 4 --log-level=info"
+--output ~/videos/%(upload_date)s-%(title)s.%(ext)s
+--format 'bestvideo[height <=? 900]+bestaudio/best[height <=? 900]'
+--add-metadata
+--ignore-errors
+--continue
+--download-archive ~/.config/youtube-dl/downloaded.log
+--no-overwrites

@@ -1,0 +1,46 @@
+! vim: ft=xdefaults
+URxvt.iso14755:     false
+URxvt.iso14755_52:  false
+! URxvt.perl-ext-common:
+/* URxvt.reverseVideo: true */
+URxvt.scrollBar:    false
+
+! for ibus
+URxvt*inputMethod: ibus
+URxvt*preeditType: OverTheSpot
+
+! Jellybeans Terminal Colours
+URxvt*background:       #151515
+!*foreground:       #ffeceb
+URxvt*foreground:       #adadad
+! black
+!*color0:           #1C1C1C
+URxvt*color0:           #151515
+URxvt*color8:           #404040
+! red
+URxvt*color1:           #B85335
+URxvt*color9:           #CF6A4C
+! green
+URxvt*color2:           #6c8c71
+URxvt*color10:          #99AD6A
+! yellow
+URxvt*color3:           #FFB964
+URxvt*color11:          #FAD07A
+! blue
+URxvt*color4:           #667899
+URxvt*color12:          #8197BF
+! magenta
+URxvt*color5:           #8c6c87
+URxvt*color13:          #C6B6EE
+! cyan
+URxvt*color6:           #668799
+URxvt*color14:          #8FBFDC
+! white
+URxvt*color7:           #adadad
+!*color7:           #ffeceb
+URxvt*color15:          #dedede
+
+! URxvt.colorIT:     #667899
+! URxvt.colorBD:     #dedede
+! URxvt.colorUL:     #667899
+! URxvt.cursorColor: #adadad

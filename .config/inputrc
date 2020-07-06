@@ -1,0 +1,47 @@
+$include /etc/inputrc
+# set editing-mode vi
+$if mode=vi
+	set show-mode-in-prompt on
+	set vi-ins-mode-string \1\e[6 q\2
+	set vi-cmd-mode-string \1\e[2 q\2
+
+	set keymap vi-command
+	# these are for vi-command mode
+	Control-l: clear-screen
+	Control-a: beginning-of-line
+
+	set keymap vi-insert
+	# these are for vi-insert mode
+	Control-l: clear-screen
+	Control-a: beginning-of-line
+$endif
+
+set colored-stats on
+set completion-ignore-case on
+set completion-map-case on
+# set editing-mode emacs
+set mark-symlinked-directories on
+set menu-complete-display-prefix on
+set show-all-if-ambiguous on
+set enable-keypad on
+
+Tab: menu-complete
+Control-Tab: menu-complete-backward
+
+"C-p": history-search-backward
+"C-n": history-search-forward
+
+"\ep": history-search-backward
+"\en": history-search-forward
+
+Control-j: history-and-alias-expand-line
+
+# Inserts man at front
+"\eh": "\C-aman \r"
+
+# |less last line
+"\el": "\C-e | less -FX\r"
+
+# start of line, delete first word
+"\ea": "\C-p\C-a\ed"
+

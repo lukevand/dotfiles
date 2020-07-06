@@ -1,0 +1,25 @@
+# -*- conf-unix -*-
+
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+
+map i recolor
+
+# reversed color
+set recolor-darkcolor "#888888"
+set recolor-lightcolor "#171717"
+# set recolor-keephue true
+
+# Not as bright
+# set recolor-darkcolor  "#1c1c1c"
+# set recolor-lightcolor "#dedede"
+# set recolor-darkcolor  "#dcdcdc"
+# set recolor-lightcolor "#1f1f1f"
+
+# set recolor-lightcolor          "#E0E0E0" #06
+# set recolor-darkcolor "#303030" #02
+
+set window-title-basename "true"
+# set recolor "true"
+
+set guioptions ''
