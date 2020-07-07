@@ -2,7 +2,7 @@
 # from /etc/profile
 umask 077
 # root's PATH in /etc/profile
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/gradle/gradle-6.5.1/bin"
 
 PATH="${PATH}:$(find "$HOME/bin" -maxdepth 1 -type d | xargs | sed 's/ /:/g')"
 
