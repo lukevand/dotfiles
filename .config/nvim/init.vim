@@ -86,7 +86,7 @@ nnoremap <C-n> :bnext<cr>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>es :edit /home/cos/.config/nvim/mySnips/all.snippets<cr>
 nnoremap <leader>et :edit /home/cos/.config/nvim/mySnips/tex.snippets<cr>
-nnoremap <leader>ec :edit /home/cos/skel/skel.cpp<cr>
+" nnoremap <leader>ec :edit /home/cos/skel/skel.cpp<cr>
 
 " augroups {{{
 augroup default
@@ -106,14 +106,14 @@ augroup END
 augroup scripts
   autocmd!
   autocmd BufWritePost ~/bin/*.sh silent !chmod 700 %
-  autocmd BufNewFile *.sh 0read ~/skel/skel.sh
+  " autocmd BufNewFile *.sh 0read ~/skel/skel.sh
   autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 augroup END
 
 augroup javascript
   autocmd!
   autocmd FileType javascript,html,xml,xslt,json,yaml,css setlocal shiftwidth=2 softtabstop=2
-  autocmd BufNewFile *.html 0read ~/skel/skel.html
+  " autocmd BufNewFile *.html 0read ~/skel/skel.html
   autocmd FileType html nnoremap <buffer> <LocalLeader>p i<p></p><left><left><left><left>
 augroup END
 
@@ -156,7 +156,7 @@ endfunction
 augroup tex
   autocmd!
   autocmd VimLeave *.tex !texclear %
-  autocmd BufNewFile *.tex 0read /home/cos/skel/template.tex
+  " autocmd BufNewFile *.tex 0read /home/cos/skel/template.tex
   autocmd FileType *.tex setlocal spell
   autocmd FileType tex setlocal shiftwidth=1 softtabstop=1
   autocmd FileType tex call TexAbbr()
@@ -167,7 +167,7 @@ function JavaAbbr() abort
 endfunction
 augroup java
   autocmd!
-  autocmd BufNewFile *.java 0read /home/cos/skel/skel.java
+  " autocmd BufNewFile *.java 0read /home/cos/skel/skel.java
   autocmd FileType java setlocal shiftwidth=2 softtabstop=2
   autocmd FileType java setlocal omnifunc=javacomplete#Complete
   autocmd FileType java iabbr <buffer> pl System.out.println
@@ -177,7 +177,7 @@ augroup END
 
 augroup cpp
   autocmd!
-  autocmd BufNewFile *.cpp 0read /home/cos/skel/skel.cpp
+  " autocmd BufNewFile *.cpp 0read /home/cos/skel/skel.cpp
   autocmd FileType cpp nnoremap <LocalLeader>u ceuint32_t<esc>
   autocmd FileType cpp nnoremap <LocalLeader>u ceuint32_t<esc>
   autocmd BufRead *.h ALEDisableBuffer
