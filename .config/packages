@@ -74,13 +74,9 @@ units
 virtualenv
 wamerican
 wbritish
-wget
-wireshark
-xcape
 xdotool
 xfonts-terminus
-yasm
 zathura
 zathura-djvu
 zsh
-
+zsh-autosuggestions
