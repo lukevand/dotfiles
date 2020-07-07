@@ -1,0 +1,20 @@
+#!/bin/zsh
+# Get .zshrc with
+# wget -O .zshrc        http://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+HISTSIZE=100000000
+SAVEHIST=$HISTSIZE
+. ~/.config/aliases
+WORDCHARS=${WORDCHARS//[-.\/_:=]}
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+bind2maps emacs viins       -- -s '\ep' history-beginning-search-backward
+bind2maps emacs viins       -- -s '\en' history-beginning-search-forward
+
+check_com -c dircolors && eval $(dircolors -b ~/.dir_colors)
+zstyle ':completion:*:manuals.*'  insert-sections   false
+
+# . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+setopt hist_ignore_space
+
+. /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+. /usr/share/doc/fzf/examples/key-bindings.zsh
