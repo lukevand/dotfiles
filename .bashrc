@@ -30,7 +30,7 @@ shopt -s no_empty_cmd_completion
 shopt -s nocaseglob
 shopt -s progcomp_alias
 
-[ -f ~/.dir_colors ] && eval "$(dircolors -b ~/.dir_colors)"
+[ -f ~/.config/dir_colors ] && eval "$(dircolors -b ~/.config/dir_colors)"
 
 . ~/.config/aliases
 
