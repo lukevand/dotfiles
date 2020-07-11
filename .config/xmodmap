@@ -17,8 +17,8 @@ clear      mod5
 
 ! keycode 66 = backspace
 
-! right alt
-keycode 108 = Escape NoSymbol Escape NoSymbol Escape
+! caps lock
+keycode 66 = Escape NoSymbol Escape NoSymbol Escape
 
 ! menu
 keycode 135 = Super_R NoSymbol Super_R NoSymbol Super_R
