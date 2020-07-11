@@ -75,6 +75,7 @@ virtualenv
 wamerican
 wbritish
 xdotool
+xsel
 xfonts-terminus
 zathura
 zathura-djvu
