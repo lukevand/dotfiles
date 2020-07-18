@@ -1,28 +1,7 @@
-#!/bin/bash
-# vim: filetype=sh
+#!/bin/sh
 
-# vf(){ fzf | xargs -r -I % "$EDITOR" %; }
 # sizes(){ apt-cache show "$@" | grep Size; }
 eixd(){ aptitude search \~d"$*"; }
-# vd() { find "$HOME" -type f -name '.*' | fzf | xargs -r "$EDITOR"; }
-# vv() { find . -type f | fzf | xargs -r "$EDITOR"; }
-# hist() { grep -i "$1" ~/.*history; }
-# fkill() { ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}' | xargs -r kill; }
-# algrep() { ag "$1" ~/.config; }
-# vh() { rg --hidden --files | fzf -1 | xargs -r "$EDITOR"; }
-# awkn() { awk '{ print $'$1'; }'; }
-# vm() { find ~/massey -type f | fzf --query="$1" -1 -0 | xargs -r "$EDITOR"; }
-# dm() { find ~/massey-doc -type f | fzf --query="$1" -1 -0 | xargs -r -I% xdg-open %; }
-# vmass() { find ~/massey -type f -name | fzf | xargs -r $EDITOR; }
-
-# vg() {
-# 	local file
-# 	local line
-
-# 	read -r file line <<<"$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1, $2}')"
-
-# 	[[ -n $file ]] && $EDITOR "$file" +"$line"
-# }
 
 alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
@@ -37,7 +16,6 @@ alias shc=shellcheck
 alias ipy=ipython
 alias xdt=xdotool
 alias dkpg=dpkg
-alias p=popd
 alias sess='less -S'
 alias showw='apt show'
 alias show='aptitude show'
@@ -77,9 +55,7 @@ alias al=alias
 alias ht=htop
 alias gu='guile --no-auto-compile'
 alias gl='guile --no-auto-compile --no-debug -l'
-# alias pass='PASSWORD_STORE_X_SELECTION=primary pass'
 alias dwmlogout='pkill xinit'
-alias ufw='sudo ufw'
 alias lbpart='lsblk -o NAME,UUID,PARTUUID,MOUNTPOINT'
 alias tree='tree -C'
 alias grubre='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -115,7 +91,6 @@ alias von='sudo vbetool dpms on'
 alias voff='sudo vbetool dpms off'
 # alias lp='lp_solve -S5'
 alias lns='ln --symbolic'
-# alias sc=systemctl
 alias scu='systemctl --user'
 alias suser='systemctl --user'
 alias daere='systemctl --user daemon-reload'
@@ -151,12 +126,11 @@ alias ga='git add'
 alias javaa='java -XX:+UseSerialGC -Xss64m -Dfile.encoding=UTF-8'
 alias mutt=neomutt
 alias tyt='tsp youtube-dl'
-# alias g+='g++ -ggdb -Wall -Wshadow -Wunused -Wextra -Wchkp -Wuseless-cast -Wpedantic -std=gnu++17'
 alias ncm=ncmpcpp
 alias n=nnn
 alias trre=transmission-remote
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias youtube-playlist="youtube-dl -o '/home/cos/videos/%(playlist)s/%(playlist_index)s-%(upload_date)s-%(title)s.%(ext)s'"
-alias tmuxt='tmux attach -t base || tmux new -s base'
-alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias g=git

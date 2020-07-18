@@ -18,3 +18,5 @@ setopt hist_ignore_space
 
 . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 . /usr/share/doc/fzf/examples/key-bindings.zsh
+
+. /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh

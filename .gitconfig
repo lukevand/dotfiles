@@ -1,7 +1,12 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Luke van Duuren
-	email = lvanduuren@protonmail.com
+    name = Luke van Duuren
+    email = lvanduuren@protonmail.com
 [credential]
-	helper = cache
+    helper = cache
+[alias]
+    co = checkout
+    br = branch
+    ci = commit -v
+    s = status -sb

@@ -10,26 +10,18 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'simnalamburt/vim-mundo'
 
 Plug 'lervag/vimtex'
-Plug 'KeitaNakamura/tex-conceal.vim'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'Shougo/deoplete-clangx'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 
 Plug 'plasticboy/vim-markdown'
-Plug 'jreybert/vimagit'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Plug 'artur-shaik/vim-javacomplete2'
-
-Plug 'junegunn/fzf'
-
 call plug#end()
 " }}}
 
@@ -63,12 +55,11 @@ set linebreak
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
-" filetype indent plugin on
 set number relativenumber
 set splitbelow splitright
 
 " set list
-set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
+" set listchars=tab:‣\ ,trail:·,precedes:«,extends:»
 
 set expandtab
 set shiftwidth=4
@@ -84,18 +75,14 @@ nnoremap <C-p> :bprev<cr>
 nnoremap <C-n> :bnext<cr>
 
 nnoremap <leader>ev :edit $MYVIMRC<cr>
-nnoremap <leader>es :edit /home/cos/.config/nvim/mySnips/all.snippets<cr>
-nnoremap <leader>et :edit /home/cos/.config/nvim/mySnips/tex.snippets<cr>
-" nnoremap <leader>ec :edit /home/cos/skel/skel.cpp<cr>
 
 " augroups {{{
 augroup default
   autocmd!
   autocmd BufWritePre * %s/\s\+$//e
-  " autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   " r: Automatically insert the current comment leader after hitting <Enter> in Insert mode.
   " o: carry on comment in insert
-  " autocmd FileType * setlocal formatoptions-=r formatoptions-=o
+  autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 
   autocmd CompleteDone * silent! pclose!
 
@@ -106,14 +93,12 @@ augroup END
 augroup scripts
   autocmd!
   autocmd BufWritePost ~/bin/*.sh silent !chmod 700 %
-  " autocmd BufNewFile *.sh 0read ~/skel/skel.sh
   autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 augroup END
 
 augroup javascript
   autocmd!
   autocmd FileType javascript,html,xml,xslt,json,yaml,css setlocal shiftwidth=2 softtabstop=2
-  " autocmd BufNewFile *.html 0read ~/skel/skel.html
   autocmd FileType html nnoremap <buffer> <LocalLeader>p i<p></p><left><left><left><left>
 augroup END
 
@@ -156,30 +141,18 @@ endfunction
 augroup tex
   autocmd!
   autocmd VimLeave *.tex !texclear %
-  " autocmd BufNewFile *.tex 0read /home/cos/skel/template.tex
   autocmd FileType *.tex setlocal spell
   autocmd FileType tex setlocal shiftwidth=1 softtabstop=1
   autocmd FileType tex call TexAbbr()
 augroup END
 
-function JavaAbbr() abort
-  " iabbr <buffer> psvm public static void main(String[] args) {<CR><CR>}<ESC>ki
-endfunction
 augroup java
   autocmd!
-  " autocmd BufNewFile *.java 0read /home/cos/skel/skel.java
-  autocmd FileType java setlocal shiftwidth=2 softtabstop=2
-  autocmd FileType java setlocal omnifunc=javacomplete#Complete
   autocmd FileType java iabbr <buffer> pl System.out.println
-  " autocmd FileType java JCEnable
-  " autocmd FileType java call JavaAbbr()
 augroup END
 
 augroup cpp
   autocmd!
-  " autocmd BufNewFile *.cpp 0read /home/cos/skel/skel.cpp
-  autocmd FileType cpp nnoremap <LocalLeader>u ceuint32_t<esc>
-  autocmd FileType cpp nnoremap <LocalLeader>u ceuint32_t<esc>
   autocmd BufRead *.h ALEDisableBuffer
 augroup END
 " }}}
@@ -189,7 +162,6 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#custom#option#num_processes = 4
 let g:loaded_python_provider = 0
 let g:python3_host_prog = "/usr/bin/python3"
-
 " }}}
 
 " vimtex {{{
@@ -208,20 +180,12 @@ let g:asmsyntax = 'asm'
 
 " ale {{{
 " let g:ale_java_javac_options = '--module-path /usr/share/openjfx/lib --add-modules javafx.controls'
-let g:ale_java_javac_classpath='.:/usr/share/tomcat9/lib/servlet-api.jar'
 
 let g:ale_nasm_nasm_executable = 'yasm'
 let g:ale_nasm_nasm_options = '-f elf64'
 
-let g:ale_python_pylint_options = '--no-docstring-rgx=".*"'
-
 let g:ale_javascript_eslint_executable = 'npx'
 let g:ale_javascript_eslint_options = 'eslint'
-
-" let g:ale_linters = {
-"       \ 'cpp': ['clangd', 'clangtidy', 'cppcheck', 'flawfinder', 'gcc'],
-"       \ 'python': ['flake8', 'mypy', 'pylint', 'bandit', 'prospector', 'pylama', 'vulture'],
-"       \}
 
 let g:ale_fixers = {
       \ 'json': ['fixjson', 'jq'],
@@ -239,19 +203,10 @@ let g:ale_lint_on_save = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_folding_disabled = 1
 
-iabbr wd Well done!
-iabbr lpvd Luke Parsloe-van Duuren
-iabbr lvd Luke van Duuren
-iabbr cheers Cheers,<cr>Luke van Duuren
-iabbr adn and
-
-" snips {{{
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetDirectories = ['mySnips', 'UltiSnips']
-" }}}
-
 
 " Actually <C-/>
 xnoremap <C-_> :Commentary<cr>

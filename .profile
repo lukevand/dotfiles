@@ -6,7 +6,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/gradle/g
 
 PATH="${PATH}:$(find "$HOME/bin" -maxdepth 1 -type d | xargs | sed 's/ /:/g')"
 
-export PATH="$PATH:/usr/games:$HOME/.local/bin:/usr/lib/execline/bin:/snap/bin"
+export PATH="$PATH:/usr/games:$HOME/.local/bin:/usr/lib/execline/bin:/snap/bin:$HOME/.gem/ruby/2.7.0/bin"
 
 export BROWSER="firefox"
 export EDITOR="nvim"
@@ -31,6 +31,8 @@ export SXHKD_SHELL=/usr/lib/execline/bin/execlineb
 export NO_AT_BRIDGE=1
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+
+export WORKON_HOME=~/.local/share/python_env
 
 
 # export AWT_TOOLKIT=MToolkit
