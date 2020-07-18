@@ -131,6 +131,5 @@ alias n=nnn
 alias trre=transmission-remote
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias youtube-playlist="youtube-dl -o '/home/cos/videos/%(playlist)s/%(playlist_index)s-%(upload_date)s-%(title)s.%(ext)s'"
 alias cfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias g=git

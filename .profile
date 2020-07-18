@@ -1,10 +1,9 @@
-# export PATH="$HOME/bin:$PATH"
-# from /etc/profile
 umask 077
-# root's PATH in /etc/profile
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/gradle/gradle-6.5.1/bin"
 
-PATH="${PATH}:$(find "$HOME/bin" -maxdepth 1 -type d | xargs | sed 's/ /:/g')"
+# root's PATH in /etc/profile
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+PATH="${PATH}:$(find "$HOME/bin" -maxdepth 1 -type d -print0 | xargs -0 | sed 's/ /:/g')"
 
 export PATH="$PATH:/usr/games:$HOME/.local/bin:/usr/lib/execline/bin:/snap/bin:$HOME/.gem/ruby/2.7.0/bin"
 
@@ -25,7 +24,7 @@ export MYPY_CACHE_DIR=~/.cache/mypy_cache
 export NNN_USE_EDITOR=1
 
 export LESSHISTFILE='-'
-export LESS='--LONG-PROMPT -R --ignore-case --quiet'
+export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quiet --no-init --quit-if-one-screen'
 export SDCV_HISTSIZE=0
 export SXHKD_SHELL=/usr/lib/execline/bin/execlineb
 export NO_AT_BRIDGE=1
@@ -34,12 +33,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 
 export WORKON_HOME=~/.local/share/python_env
 
-
-# export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=true
 export _JAVA_OPTIONS='-Dsun.java2d.opengl=true -Dawt.useSystemAAFontSettings=lcd'
-
-[ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
-[ -n "$ZSH_VERSION" ] && [ -f "$HOME/.zshrc" ] && . "$HOME/.zshrc"
 
 [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ] && exec startx -- -nolisten tcp

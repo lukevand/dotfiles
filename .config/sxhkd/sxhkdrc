@@ -12,10 +12,10 @@ super + F2
   /home/cos/bin/search-clipboard.sh
 
 super + Return
-  st -e tmux -2 new
+  st
 
 super + shift + Return
-  st
+  st -e tmux -2 new
 
 mod3 + k
   pkill -USR1 -x sxhkd
