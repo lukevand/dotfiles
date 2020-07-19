@@ -78,10 +78,10 @@ XF86AudioPlay
   pausempv
 
 super + F7
-  insert-song.sh
+  insert-song
 
 super + shift + F7
-  insert-album.sh
+  insert-album
 
 super + KP_Begin
   st -n float -e ncmpcpp

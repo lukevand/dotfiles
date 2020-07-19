@@ -131,5 +131,5 @@ alias n=nnn
 alias trre=transmission-remote
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias cfg='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cfg='git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME'
 alias g=git
